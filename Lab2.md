@@ -86,4 +86,46 @@ y[c(10), c(2)]
 ```
 10
 * column cc
+```{r}
+data.frame(y$cc)
+```
+ y.cc|
+ ----|
+ a |
+ b |
+ p |
+ p |
+ q |
+ e |
+ v |
+ k |
+ z |
+ f |
+... |
+
+#### 3. Create a vector
+```{r}
+z <- c(1, 2, 3 NA, 5,  NA)
+z
+```
+1  2 NA  4 NA  5
+* exclude NA values
+```{r}
+ex <- is.na(z)
+u <- z[!ex]
+u
+```
+1 2 4 5
+
+* mean value without NA
+```{r}
+mean(u)
+```
+3
+
+* calculate mean with NA values
+```{r}
+mean(z)
+```
+NA
 
