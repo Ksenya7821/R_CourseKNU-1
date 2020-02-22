@@ -130,7 +130,7 @@ first_NA
 [1] 5
 
 ```{r}
-count_NA <- length(which(l)) # find index of first NA element
+count_NA <- length(which(l)) # find number of NA element
 count_NA
 ```
 [1] 3
