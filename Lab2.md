@@ -121,6 +121,10 @@ u
 ```{r}
 mean(u)
 ```
+
+```{r}
+mean (z, na.rm = TRUE)
+```
 3
 
 * calculate mean with NA values
