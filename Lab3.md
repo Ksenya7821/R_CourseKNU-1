@@ -79,7 +79,7 @@ my_ifelse(z, "*", 10)
 8.000000  8.777778  9.555556 10.333333 11.111111 11.888889 12.666667 13.444444 14.222222 15.000000
 ```
 
-#### Task 3
+#### Task 4
 
 ```{r}
 # creating matrix
@@ -94,20 +94,21 @@ NA  |  9  | 16
 
 ```{r}
 # initiating function
-columnmean <- function(x, removeNA = TRUE) {
-  colMeans(x, na.rm = removeNA)
-  }
+columnmean <- function(x, removeNA=TRUE) {
++   for(j in seq_len(ncol(x))) {
++     print(mean(x[, j], na.rm=removeNA))
++   }
++  
++ }
+> columnmean(m, TRUE)
+
 ```
 ```{r}
 columnmean(m, FALSE)
 ```
-NA NA NA
-
-```{r}
-columnmean(m, TRUE)
-```
-5.333333  9.000000 14.666667
-
+[1] 5.333333
+[1] 9
+[1] 14.66667
 
 
 
