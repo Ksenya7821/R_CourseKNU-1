@@ -67,7 +67,9 @@ mean(data_set$Ozone[!is.na(data_set$Ozone)])
 Create subset
 ```{r}
 sub_set <- subset(data_set, data_set$'Ozone'>31 & data_set$'Temp' > 90)
+mean(sun_set$'Solar.R')
 ```
+212.8
 
 #### Task 8
 Mean(temp) if mounth is June
