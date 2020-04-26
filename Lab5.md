@@ -45,7 +45,7 @@ setwd("c:/specdata")
 ```{r}
 complete("cpecdata", 1)
 ```
-|id| numobs
+obs|id| numobs
 ---|---|---
 1 | 1  |  117
 
