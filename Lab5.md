@@ -3,14 +3,14 @@
 setwd("c:/specdata")
 > getwd()
  "c:/specdata"
-> file_list <- list.files()
+> file_list <- list.files(path="c:/specdata", pattern=".csv")
 > length(file_list)
  332
  ```
  ### Task 1
 ```{r}
 > pmean <- function(directory, pollutant, id=1:332){
-+   file_list <- list.files()
++   file_list <- list.files(path="c:/specdata", pattern=".csv", full.names=TRUE)
 +   values <- numeric()
 +   for (i in id){
 +     df <- read.csv(file_list[i])
@@ -32,7 +32,7 @@ setwd("c:/specdata")
  
  ```{r}
 > complete <- function(directory, id=1:332){
-+   file_list <- list.files()
++   file_list <- list.files(path="c:/specdata", pattern=".csv", full.names=TRUE)
 +   numobs <- numeric()
 +   for (i in id){
 +     df <- read.csv(file_list[i])
@@ -80,7 +80,7 @@ complete("specdata", 35:45)
 
 ```{r}
 > corr <- function(directory, threshold=0){
-+   file_list <- list.files()
++   file_list <- list.files(path="c:/specdata", pattern=".csv", full.names=TRUE)
 +   v<-c()
 +   for (i in 1:length(file_list)){
 +     df <- read.csv(file_list[i])
