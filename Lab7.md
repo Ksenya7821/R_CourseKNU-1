@@ -1,5 +1,5 @@
 ### Prepare set
-``{r}
+```{r}
 df <- read.csv("C:/mylib/olympics.csv", skip = 1, 
                header = TRUE, encoding='UTF-8', 
                stringsAsFactors = FALSE) 
