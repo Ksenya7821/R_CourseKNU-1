@@ -101,6 +101,7 @@ olympics[which.max(olympics$Gold), "Country"]
 }
 answer1()
 ```
+Answer:
 "United States"
   
 ### Question 2
@@ -112,6 +113,8 @@ answer2<-function() {
 }
 answer2()
 ```
+
+Answer:
 "United States"
 
 ### Question 3
@@ -125,6 +128,8 @@ answer3<-function() {
 }
 answer3()
 ```
+
+Answer:
 "Bulgaria "
 
 ### Question 4
@@ -138,6 +143,8 @@ answer4<-function() {
 
 head(answer4())
 ```
+
+Answer:
 ```{r}
        Country Points
 1 Afghanistan       2
@@ -279,6 +286,8 @@ answer5<-function() {
 
 answer5()
 ```
+
+Answer:
 Texas 
    44
    
@@ -296,6 +305,8 @@ Texas
 }
 answer6() 
  ```
+ 
+Answer:
  "California" "Texas"      "Illinois"  
  
  ### Question 7
@@ -311,6 +322,8 @@ answer6()
 }
 answer7()
  ```
+ 
+Answer:
  "Texas"
  ### Question 8
   Create function that finds countries from regions 1 and 2, for which name starts with "Washington" and POPESTIMATE2015 greater than  POPESTIMATE2014.
@@ -325,6 +338,7 @@ answer7()
 answer8() 
 ```
 
+Answer:
 ```{r}
           STNAME           CTYNAME
 897          Iowa Washington County
