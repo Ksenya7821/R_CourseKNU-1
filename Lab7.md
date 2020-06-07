@@ -313,18 +313,21 @@ Answer:
  
  ```{r}
  answer7<-function() {
-  population<-census[, 10:15]
-  popul_max<-apply(population, 1, max)
-  popul_min<-apply(population, 1, min)
-  popul_chg<-(popul_max-popul_min)
-  population<-cbind(CTYNAME = census$CTYNAME, popul_chg)
-  population[which.max(popul_chg)]
-}
-answer7()
+    population<-subset(census, COUNTY !=0, select=c(10:15))
+    popul_max<-apply(population, 1, max)
+    popul_min<-apply(population, 1, min)
+    popul_chg<-(popul_max-popul_min)
+    name<-subset(census, COUNTY!=0, CTYNAME)
+    popul<-cbind(name, popul_chg)
+    population<-popul$CTYNAME
+    population[which.max(popul_chg)]
+ }
+> answer7()
  ```
  
 Answer:
- "Texas"
+ "Harris County"
+ 
  ### Question 8
   Create function that finds countries from regions 1 and 2, for which name starts with "Washington" and POPESTIMATE2015 greater than  POPESTIMATE2014.
   
