@@ -29,3 +29,10 @@ fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
 df <- read.csv(fileUrl)
 df
 ```
+count properties with value more then 1000000
+
+```r
+subset_1<-subset(df, VAL=68)
+ nrow(subset_1)
+ ```
+[1] 6496
