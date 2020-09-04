@@ -17,3 +17,15 @@ read_excel("C:/Users/HP/Documents/forecast.xls", sheet=1)
 ```
 
 ##### Task 2
+Download file
+```r
+fileurl<-("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv")
+download.file(fileurl, destfile="./getdata.csv", mode='wb')
+```
+
+read csv file
+```r
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+df <- read.csv(fileUrl)
+df
+```
