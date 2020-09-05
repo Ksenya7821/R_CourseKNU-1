@@ -46,14 +46,32 @@ sum(df$VAL==24 & !is.na(df$VAL))
 Download xml file
 
 ```r
-library(XML)
+library(xml2)
 
-dat <-  xmlTreeParse("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml",useInternal = TRUE)
-x <- xmlRoot(dat)
+pg <- read_xml("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml")
+```
+Convert xml to dataframe
 
+```r
+doc <- as_list(pg)
+str(doc$response, 1)
+
+library(tidyr)
+dat<- tibble::as_tibble(doc) %>%
+  # new tidyr function
+  unnest_wider(response) %>%
+  # unnest same length list cols
+  unnest(cols = names(.)) %>%
+  unnest(cols = names(.)) %>%
+  # convert using readr parser
+ readr::type_convert()
+```
+Transpose dataframe
+```r
+dat_transpose <- as.data.frame(t(as.matrix(dat)))
 ```
 ```r
-sum(xpathSApply(x,"//zipcode",xmlValue) == 21231)
+sum(dat_transpose$V2==21231 & !is.na(dat_transpose$V2))
 ```
 127
 
