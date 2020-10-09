@@ -79,3 +79,4 @@ numSamples <- 1000000
 ```{r}
 plot(myTime[0:numSamples], strain[0:numSamples], type = "l", xlab = "GPS Time (s)", ylab = "H1 Strain")
 ```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot.png)
