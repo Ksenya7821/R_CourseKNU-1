@@ -144,10 +144,26 @@ Rank                                    Title Runtime
 84   84                                    Мати!     121
 ```
 
+```{r}
+
+library("dplyr")
+
+mt120 <- movies %>% filter(Runtime > 120)
+mt120
+```
+
 ### Task 3 - count number of films with runtime less than 100 mins
 ```{r}
 nrow(subset(movies, Runtime <100))
 
 52
 ```
+```{r}
+count100 <-movies %>% filter(Runtime < 100) %>% count
+count100
+
+   n
+1 52
+```
+
  
