@@ -32,7 +32,7 @@ dbClearResult(res)
 
 ```
 
-### Task2
+### Task 2
 ```{r}
 res<- dbSendQuery(conn, "SELECT a.Name, p.Title 
                   FROM Authors a inner join PaperAuthors ap on a.id=ap.AuthorId
