@@ -78,7 +78,7 @@ dbClearResult(res)
 
 ### Task 4
 ```{r}
-res<- dbSendQuery(conn, "SELECT a.Name, count(p.Title) as NumPapers 
+res<- dbSendQuery(conn, "SELECT distinct a.Name, count(p.Title) as NumPapers 
                   FROM Authors a inner join PaperAuthors ap on a.id=ap.AuthorId
                   inner join papers p on p.Id=ap.PaperId 
                   GROUP BY a.Name
