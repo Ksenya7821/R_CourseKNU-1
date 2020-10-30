@@ -28,7 +28,7 @@ hist(subdt$Global_active_power, col="red", main="Global Active Power",
      xlab="Global Active Power (kilowatts)")
 dev.off()
 ```
-![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot1.png)
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/plot1.png)
 
 ### Task 2
 Global active pover consumption over time
@@ -39,7 +39,7 @@ plot(subdt$DateTime,subdt$Global_active_power, ylab="Global Active Power (kilowa
      xlab="", type="l")
 dev.off()
 ```
-![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot2.png)
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/plot2.png)
 
 ### Task 3
 Energy sub meterings
@@ -52,7 +52,7 @@ points(subdt$DateTime,subdt$Sub_metering_3, col="blue", type="l")
 legend("topright", lwd=1, col=c("black", "red", "blue"), legend=names(subdt[,7:9]))
 dev.off()
 ```
-![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot3.png)
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/plot3.png)
 
 
 ### Task 4
@@ -74,4 +74,4 @@ dev.off()
 
 ```
 
-![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot4.png)
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/plot4.png)
