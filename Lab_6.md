@@ -23,6 +23,7 @@ subdt$DateTime<-strptime(paste(subdt$Date,subdt$Time),"%F %T")
 ### Task 1
 Histogram of Global active pover consumption
 
+```{r}
 png("plot1.png", width=480, height=480)
 hist(subdt$Global_active_power, col="red", main="Global Active Power", 
      xlab="Global Active Power (kilowatts)")
