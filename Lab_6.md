@@ -27,6 +27,51 @@ png("plot1.png", width=480, height=480)
 hist(subdt$Global_active_power, col="red", main="Global Active Power", 
      xlab="Global Active Power (kilowatts)")
 dev.off()
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot1.png)
 
 ### Task 2
 Global active pover consumption over time
+
+```{r}
+png("plot2.png", width=480, height=480)
+plot(subdt$DateTime,subdt$Global_active_power, ylab="Global Active Power (kilowatts)", 
+     xlab="", type="l")
+dev.off()
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot2.png)
+
+### Task 3
+Energy sub meterings
+```{r}
+png("plot3.png", width=480, height=480)
+
+plot(subdt$DateTime,subdt$Sub_metering_1,ylab="Energy sub metering", xlab="", type="l", col="black")
+points(subdt$DateTime,subdt$Sub_metering_2, col="red", type="l")
+points(subdt$DateTime,subdt$Sub_metering_3, col="blue", type="l")
+legend("topright", lwd=1, col=c("black", "red", "blue"), legend=names(subdt[,7:9]))
+dev.off()
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot3.png)
+
+
+### Task 4
+Combination of 4 plots: global active power, energy sub meterings, voltage over time, global reactive power over time
+```{r}
+# Plot 4.1
+plot(subdt$DateTime, subdt$Global_active_power, ylab="Global Active Power (kilowatts)", 
+     xlab="", pch =".", type="l")
+# Plot 4.2
+plot(subdt$DateTime, subdt$Sub_metering_1,ylab="Energy sub metering", xlab="", type="l", col="black")
+points(subdt$DateTime, subdt$Sub_metering_2, col="red", type="l")
+points(subdt$DateTime, subdt$Sub_metering_3, col="blue", type="l")
+legend("topright", lwd=1, col=c("black", "red", "blue"), legend=names(subdt[,7:9]), bty="n")
+# Plot 4.3
+plot(subdt$DateTime, subdt$Voltage, ylab="Voltage", xlab="datetime", type="l")
+# Plot 4.4
+plot(subdt$DateTime, subdt$Global_reactive_power, ylab="Global_reactive_power", xlab="datetime", type="l")
+dev.off()
+
+```
+
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot4.png)
