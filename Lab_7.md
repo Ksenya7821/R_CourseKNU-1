@@ -31,3 +31,16 @@ barplot((df1$Total/10^6), names.arg=df1$year, xlab = "Year", ylab = "PM2.5 Emiss
         main="Total PM2.5 Emissions From All US Sources")
 ```
 ![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot1.png)
+
+Total emissions from PM2.5 have decreased in the US, from 1999 to 2008.
+
+## Question 2
+```{r}
+df2 <- NEI %>% group_by(year)%>%filter(fips=="24510")%>%summarise(Total=sum(Emissions))
+par(mar = rep(2, 4))
+barplot(df2$Total, names.arg=df2$year, xlab = "Year", ylab = "PM2.5 Emissions (Tons)",
+        main="Total PM2.5 Emissions From All Baltimore City Sources")
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot2.png)
+Overall, total emissions from PM2.5 have decreased in Baltimore City, Maryland, from 1999 to 2008.
+
