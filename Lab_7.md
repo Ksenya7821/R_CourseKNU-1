@@ -48,8 +48,64 @@ Overall, total emissions from PM2.5 have decreased in Baltimore City, Maryland, 
 ## Question 3
 
 ```{r}
+library('ggplot2')
 
+df3 <- NEI%>%select(year, Emissions, type, fips)%>%filter(fips=="24510")%>% group_by(year, type)%>%summarise(Total=sum(Emissions))
+
+ggplot(df3, aes(factor(year), Total, fill=factor(type))) +
+  geom_bar(stat="identity")  +  facet_grid(~type) + guides(fill=FALSE)+ 
+  labs(x="year", y=expression("Total PM2.5 Emission (Tons)")) + 
+  labs(title=expression("PM2.5 Emissions in Baltimore City 1999-2008 by Source Type"))
 ```
 ![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot3.png)
 
+Non-road, nonpoint, on-road source types have decreased emissions overall from 1999-2008 in Baltimore City.
 
+## Question 4
+
+```{r}
+combustion <- grepl("comb", SCC$SCC.Level.One, ignore.case=TRUE)
+coal<- grepl("coal", SCC$SCC.Level.Four, ignore.case=TRUE) 
+coalCombustion <- (combustion & coal)
+combustionSCC <- SCC[coalCombustion,]$SCC
+df4 <- NEI[NEI$SCC %in% combustionSCC,]
+
+ggplot(df4, aes(factor(year), (Emissions/10^6))) +
+  geom_bar(stat="identity") +
+  labs(x="year", y=expression("Total PM2.5 Emission (million Tons)")) + 
+  labs(title=expression("PM2.5 Coal Combustion Source Emissions Across US from 1999-2008"))
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot4.png)
+
+Emissions from coal combustion related sources have decreased.
+
+## Question 5
+```{r}
+vehicles <- grepl("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE)
+vehiclesSCC <- SCC[vehicles,]$SCC
+vehiclesNEI <- NEI[NEI$SCC %in% vehiclesSCC,]
+df5 <- vehiclesNEI[vehiclesNEI$fips=="24510",]
+
+ggplot(df5, aes(factor(year), Emissions)) +
+  geom_bar(stat="identity") +
+  labs(x="year", y=expression("Total PM2.5 Emission (Tons)")) + 
+  labs(title=expression("PM2.5 Vehicle Source Emissions in Baltimore City from 1999-2008"))
+ ```
+ ![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot5.png)
+
+Emissions from vehicle related sources have decreased in Baltimore from 1999-2008.
+
+## Question 6
+```{r}
+df5$city <- "Baltimore City"
+df6 <- vehiclesNEI[vehiclesNEI$fips=="06037",]
+df6$city <- "Los Angeles"
+df7 <- rbind(df5,df6)
+
+
+ggplot(df7, aes(factor(year), Emissions, fill=factor(city))) +
+  geom_bar(stat="identity")  +  facet_grid(~city) + guides(fill=FALSE)+ 
+  labs(x="year", y=expression("Total PM2.5 Emission (Tons)")) + 
+  labs(title=expression("Vehicle Source Emissions in Baltimore and LA, 1999-2008"))
+ ```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot6.png)
