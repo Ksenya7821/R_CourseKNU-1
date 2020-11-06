@@ -42,5 +42,14 @@ barplot(df2$Total, names.arg=df2$year, xlab = "Year", ylab = "PM2.5 Emissions (T
         main="Total PM2.5 Emissions From All Baltimore City Sources")
 ```
 ![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot2.png)
+
 Overall, total emissions from PM2.5 have decreased in Baltimore City, Maryland, from 1999 to 2008.
+
+## Question 3
+
+```{r}
+
+```
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot3.png)
+
 
