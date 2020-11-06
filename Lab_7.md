@@ -30,4 +30,4 @@ par(mar = rep(2, 4))
 barplot((df1$Total/10^6), names.arg=df1$year, xlab = "Year", ylab = "PM2.5 Emissions (million Tons)",
         main="Total PM2.5 Emissions From All US Sources")
 ```
-![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/rplot1.png)
+![Plot]( https://github.com/Mariia97/R_CourseKNU/blob/master/Rplot1.png)
