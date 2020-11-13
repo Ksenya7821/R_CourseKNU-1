@@ -15,7 +15,6 @@ subdt <- subset(dt, Date=="1/2/2007" | Date =="2/2/2007")
 ```
 Converting Date and Time variables to Date/Time format
 ```{r}
-subdt <- subset(dt, Date=="1/2/2007" | Date =="2/2/2007")
 subdt$Date<-as.Date(subdt$Date, format = "%d/%m/%Y")
 subdt$DateTime<-strptime(paste(subdt$Date,subdt$Time),"%F %T")
 ```
