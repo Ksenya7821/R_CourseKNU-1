@@ -58,6 +58,8 @@ dev.off()
 ### Task 4
 Combination of 4 plots: global active power, energy sub meterings, voltage over time, global reactive power over time
 ```{r}
+png("plot4.png", width=480, height=480)
+
 # Plot 4.1
 plot(subdt$DateTime, subdt$Global_active_power, ylab="Global Active Power (kilowatts)", 
      xlab="", pch =".", type="l")
